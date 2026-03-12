@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const PROJECT_GROUPS = [
   {
@@ -36,20 +36,46 @@ const PROJECT_GROUPS = [
   }
 ];
 
-const ProjectCard = ({ proj }) => (
-  <Col md={6} lg={4} className="mb-4">
-    <Card className="h-100 shadow-sm border-0" style={{ backgroundColor: '#1E1E1E' }}>
-      {proj.thumbnail && (
-        <Card.Img variant="top" src={proj.thumbnail} alt={proj.title + ' thumbnail'} />
-      )}
-      <Card.Body>
-        <Card.Title className="text-info mb-2" style={{ fontWeight: 'bold' }}>{proj.title}</Card.Title>
-        <Card.Text className="text-light mb-3">{proj.description}</Card.Text>
-        <a href={proj.link} className="btn btn-warning">View Project</a>
-      </Card.Body>
-    </Card>
-  </Col>
-);
+const ProjectCard = ({ proj }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <Col md={6} lg={4} className="mb-4">
+      <Link
+        to={proj.link}
+        style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <Card
+          className="h-100 border-0"
+          style={{
+            backgroundColor: hovered ? '#2a2a2a' : '#1E1E1E',
+            boxShadow: hovered
+              ? '0 6px 24px rgba(99,81,201,0.35)'
+              : '0 2px 8px rgba(0,0,0,0.4)',
+            transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+            transition: 'background-color 0.2s, box-shadow 0.2s, transform 0.2s',
+            cursor: 'pointer',
+          }}
+        >
+          {proj.thumbnail && (
+            <Card.Img variant="top" src={proj.thumbnail} alt={proj.title + ' thumbnail'} />
+          )}
+          <Card.Body>
+            <Card.Title
+              className="mb-2"
+              style={{ fontWeight: 'bold', color: hovered ? '#a78bfa' : '#0dcaf0' }}
+            >
+              {proj.title}
+            </Card.Title>
+            <Card.Text className="text-light mb-0">{proj.description}</Card.Text>
+          </Card.Body>
+        </Card>
+      </Link>
+    </Col>
+  );
+};
 
 const Projects = () => {
   const { groupKey } = useParams();
