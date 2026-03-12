@@ -30,7 +30,8 @@ const PROJECT_GROUPS = [
     key: 'gis',
     label: 'Remote Sensing / GIS',
     projects: [
-      { title: 'CroGIS App', description: 'Simple app for calculating inhabitants of settlements within interactive buffer distance from the main roads in Croatia.', link: '/cro_gis_app', thumbnail: '/images/cro_roads_settlements.png' }
+      { title: 'CroGIS App', description: 'Simple app for calculating inhabitants of settlements within interactive buffer distance from the main roads in Croatia.', link: '/cro_gis_app', thumbnail: '/images/cro_roads_settlements.png' },
+      { title: 'Croatia Flood Simulator', description: 'Interactive sea-level rise simulator that floods Croatia using a real Digital Elevation Model (DEM). Drag a slider to raise the water level and see which areas go underwater.', link: '/flood_simulator', thumbnail: '/images/Croatia_flood.png' }
     ]
   }
 ];

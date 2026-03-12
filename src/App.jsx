@@ -11,6 +11,7 @@ import PlateCooling from './pages/PlateCooling';
 import Portfolio from './pages/Portfolio';
 import WR from './pages/WR';
 import Projects from './pages/Projects';
+import FloodSimulator from './pages/FloodSimulator';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/plate_cooling" element={<PlateCooling />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/wr" element={<WR />} />
+            <Route path="/flood_simulator" element={<FloodSimulator />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Container>
