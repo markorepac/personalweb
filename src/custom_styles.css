@@ -1,0 +1,311 @@
+/* custom styles ported from original Dash app */
+
+/* Sidebar nav link hover/active styling */
+.nav-pills .nav-link:not(.active):hover {
+  background-color: #CA7915FF;
+  color: hsl(260, 71%, 16%);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.08);
+}
+
+.nav-pills {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #206c9e !important;
+  color: #ffffff !important;
+}
+
+
+.nav-pills .nav-link {
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  color: #222;
+  background: #f5ad42;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(207, 108, 16, 0.10);
+  font-weight: 700;
+}
+.nav-pills .nav-item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+/* For dropdown pills (e.g., in portfolio), add gap between dropdown items */
+.nav-pills .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px !important;
+}
+.nav-pills .dropdown-menu .nav-link:not(:last-child) {
+  margin-bottom: 0.5rem !important;
+}
+/* react-bootstrap renders dropdown items with .dropdown-item, so add spacing there too */
+.nav-pills .dropdown-menu .dropdown-item:not(:last-child) {
+  margin-bottom: 0.5rem !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:focus
+/*.nav-pills .nav-link:hover*/ {
+  background: linear-gradient(90deg, #020d55 0%, #cf6c10 100%);
+  color: #fff;
+ 
+}
+
+.nav-pills > .nav-link.active {
+  background-color: #2b8fbf !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+}
+
+.nav-pills .nav > .nav-link.active {
+  background-color: #1d6b86 !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 10px;
+}
+
+.nav-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-pills .nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+/* Target the nested portfolio links wrapped in div with ms-3 class */
+.nav-pills .ms-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-pills .ms-3 .nav-link {
+  font-weight: 400;
+}
+
+.nav-pills .nav .nav-link {
+  margin-bottom: 0;
+  gap: 6px;
+}
+
+/* image hover container styling */
+.masha_container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.masha_container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.masha2 {
+  opacity: 0;
+}
+
+.masha_container:hover .masha2 {
+  opacity: 1;
+}
+
+.masha_containerr:hover .masha1 {
+  opacity: 0;
+}
+
+.masha_container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 26px rgba(223, 221, 115, 0.925);
+  cursor: pointer;
+}
+
+/* Dark background and cursor hiding */
+body {
+  background-color: #060510;
+  color: #ffffff;
+  cursor: none !important;
+}
+
+/* Portfolio card thumbnail sizing */
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Histogram bars on home page */
+.histogram {
+  display: flex;
+  align-items: flex-end;
+  height: 220px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  gap: 0; /* no space between bars */
+  margin-top: 1.5rem;
+  background: repeating-linear-gradient(
+    to top,
+    #23202b 0px,
+    #23202b 1px,
+    transparent 1px,
+    transparent 30px
+  );
+}
+
+.histogram .bar {
+  flex: 1;
+  background-color: rgba(211, 116, 27, 0); /* semi-transparent */
+  transition: height 0.2s ease;
+  /* no rounded corners */
+  border-top: 1px solid #cf6c10; /* thinner top border */
+  position: relative;
+}
+
+/* previously had side-border segments; now simple left/right borders applied inline */
+/* remove the outline around histogram container */
+.histogram {
+  outline: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+/* custom cursor elements */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #cf6c10;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease-out;
+}
+
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d49c0f;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.1s ease-out;
+}
+
+.css-scatter {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  background: #060510; /* match body background */
+  border-left: 1px solid #cf6c10;
+  border-bottom: 1px solid #cf6c10;
+  border-top: none;
+  border-right: none;
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.css-scatter .css-scatter-grid {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.css-scatter .css-scatter-grid .grid-cell {
+  border-top: 1px dashed #cf6c10;
+  border-left: 1px dashed #cf6c10;
+  opacity: 0.18;
+}
+
+.scatter-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(207, 108, 16, 0.7);
+  border: 1px solid #cf6c10;
+  box-shadow: 0 0 4px #cf6c1044;
+  transition: left 0.5s linear, bottom 0.5s linear;
+  z-index: 2;
+}
+
+/* Dashed grid lines for scatter plot */
+.css-scatter .css-scatter-grid {
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.css-scatter .css-scatter-grid .hline,
+.css-scatter .css-scatter-grid .vline {
+  position: absolute;
+  border: none;
+  background: repeating-linear-gradient(90deg, #cf6c10 0 1px, transparent 1px 6px);
+  opacity: 0.18;
+}
+
+.css-scatter .css-scatter-grid .hline {
+  width: 100%;
+  height: 1px;
+}
+
+.css-scatter .css-scatter-grid .vline {
+  height: 100%;
+  width: 1px;
+  background: repeating-linear-gradient(180deg, #cf6c10 0 1px, transparent 1px 6px);
+}
+
+.row.histogram-scatter-row {
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+/* Style select option elements for better readability */
+select option {
+  color: #ccc;
+  background-color: #222;
+}
+
+@media (min-width: 768px) {
+  .histogram, .css-scatter {
+    height: 220px;
+  }
+  .histogram {
+    margin-right: 1.5rem;
+  }
+  .css-scatter {
+    margin-left: 1.5rem;
+  }
+}
