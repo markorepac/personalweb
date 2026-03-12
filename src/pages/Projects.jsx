@@ -7,28 +7,34 @@ const PROJECT_GROUPS = [
     key: 'geodynamics',
     label: 'Geodynamics / Numerical Modelling',
     projects: [
-      { title: 'Plate Cooling', description: 'Numerical model for plate cooling.', link: '/plate_cooling', thumbnail: '/images/gisapp.png' }
+      { title: 'Plate Cooling', description: `This is a tool for displaying and comparing two most common numerical models 
+        for plate cooling. The half-space cooling model and the plate cooling model. The tool allows users to input parameters 
+        such as plate thickness, thermal diffusivity, to visualize how the temperature distribution evolves over time for both models.
+        It provides a clear comparison of the two models, highlighting their differences in terms of temperature profiles and cooling rates.
+        This tool is useful for students and researchers in geodynamics to understand the fundamental concepts of plate cooling and t
+        o explore the effects of different parameters on the cooling process.`,
+          link: '/plate_cooling', thumbnail: '/images/Plate_cooling.png' }
     ]
   },
   {
     key: 'geochemistry',
     label: 'Geochemistry / Petrology',
     projects: [
-      { title: 'Whole Rock (WR)', description: 'Geochemical research suite.', link: '/wr', thumbnail: '/images/gisapp.png' }
+      { title: 'Whole Rock (WR)', description: 'Geochemical research suite.', link: '/wr', thumbnail: '/images/WRanalysis.png' }
     ]
   },
   {
     key: 'datascience',
     label: 'Data Science',
     projects: [
-      { title: 'ML Task', description: 'Machine learning exploration.', link: '/mltask', thumbnail: '/images/gisapp.png' }
+      { title: 'ML Task', description: 'Machine learning exploration.', link: '/mltask', thumbnail: '/images/cro_roads_settlements.png' }
     ]
   },
   {
     key: 'gis',
     label: 'Remote Sensing / GIS',
     projects: [
-      { title: 'CroGIS App', description: 'GIS and remote sensing application.', link: '/cro_gis_app', thumbnail: '/images/gisapp.png' }
+      { title: 'CroGIS App', description: 'GIS and remote sensing application.', link: '/cro_gis_app', thumbnail: '/images/cro_roads_settlements.png' }
     ]
   }
 ];
